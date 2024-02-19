@@ -46,3 +46,25 @@
   margin-right: 10px;
   transform: scale(2);
 }
+
+#botones{
+  width: 31%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
+  margin-top: 8px;
+}
+
+#botones button{
+  padding: 5px 10px;
+  background-color: #00a7d1;
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+#botones button:hover {
+  background-color: #00be19;
+}
