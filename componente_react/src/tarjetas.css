@@ -1,0 +1,48 @@
+.platillos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    overflow-y: auto; 
+    max-height: calc(100vh - 200px); 
+  }
+  
+  .tarjeta {
+    width: calc(25% - 10px);
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+  }
+  
+  .tarjeta img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .tarjeta h2 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .tarjeta p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .tarjeta button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tarjeta button:hover {
+    background-color: #0056b3;
+  }
