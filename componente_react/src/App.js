@@ -35,7 +35,7 @@ function Platillos() {
     { titulo: 'Taco de sal', descripcion: 'Tortilla con sal al gusto', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
     { titulo: 'Fetuchini alfredo con camaron', descripcion: 'Pasta fetuchini bañada en salsa alfredo', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
     { titulo: 'Tacos de pollo', descripcion: 'Taco de pollo con especias', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
-    { titulo: 'Salmon al horno', descripcion: 'Salom en horno xd', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Salmon al horno', descripcion: 'Salmon en horno xd', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
     { titulo: 'Espagueti a la Carbonara', descripcion: 'Espaguetis cremosos con panceta y queso.', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
     { titulo: 'Ensalada Cesar', descripcion: 'Ensalada fresca con pollo, crutones y aderezo cremoso.', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
   ];
