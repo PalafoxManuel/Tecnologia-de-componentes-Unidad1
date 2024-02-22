@@ -2,16 +2,15 @@
   background-color: #282c34;
   text-align: center;
   height: 100vh;
+  overflow-y: hidden;
 }
 
-#root {
-  height: 100%;
+body{
   margin: 0;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

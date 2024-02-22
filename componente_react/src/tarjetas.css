@@ -3,19 +3,20 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    overflow-y: auto; 
-    max-height: calc(100vh - 200px); 
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    width: calc(100% - 40px);
   }
   
-  .tarjeta {
-    width: calc(25% - 10px);
+.tarjeta {
+    width: calc(25% - 20px);
     margin-bottom: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
-  }
+    overflow: hidden;
+}
   
   .tarjeta img {
     width: 100%;

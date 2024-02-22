@@ -29,15 +29,15 @@ function TarjetaPlatillo(props) {
 
 function Platillos() {
   const platillos = [
-    { titulo: 'Platillo 1', descripcion: 'Descripción del platillo 1', imagen: 'ruta/a/imagen-platillo-1.jpg' },
-    { titulo: 'Platillo 2', descripcion: 'Descripción del platillo 2', imagen: 'ruta/a/imagen-platillo-2.jpg' },
-    { titulo: 'Platillo 3', descripcion: 'Descripción del platillo 3', imagen: 'ruta/a/imagen-platillo-2.jpg' },
-    { titulo: 'Platillo 4', descripcion: 'Descripción del platillo 4', imagen: 'ruta/a/imagen-platillo-2.jpg' },
-    { titulo: 'Platillo 5', descripcion: 'Descripción del platillo 5', imagen: 'ruta/a/imagen-platillo-2.jpg' },
-    { titulo: 'Platillo 6', descripcion: 'Descripción del platillo 6', imagen: 'ruta/a/imagen-platillo-2.jpg' },
-    { titulo: 'Platillo 7', descripcion: 'Descripción del platillo 7', imagen: 'ruta/a/imagen-platillo-2.jpg' },
-    { titulo: 'Platillo 8', descripcion: 'Descripción del platillo 8', imagen: 'ruta/a/imagen-platillo-2.jpg' },
-    { titulo: 'Platillo 9', descripcion: 'Descripción del platillo 9', imagen: 'ruta/a/imagen-platillo-2.jpg' },
+    { titulo: 'Salchipapa', descripcion: 'Salchicha con papa picada', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Huevo con tortilla', descripcion: 'Huevo con tortilla o pal perro', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Quesadilla', descripcion: 'Quesadilla sin queso', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Taco de sal', descripcion: 'Tortilla con sal al gusto', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Fetuchini alfredo con camaron', descripcion: 'Pasta fetuchini bañada en salsa alfredo', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Tacos de pollo', descripcion: 'Taco de pollo con especias', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Salmon al horno', descripcion: 'Salom en horno xd', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Espagueti a la Carbonara', descripcion: 'Espaguetis cremosos con panceta y queso.', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
+    { titulo: 'Ensalada Cesar', descripcion: 'Ensalada fresca con pollo, crutones y aderezo cremoso.', imagen: 'https://www.institucionalcolombia.com/wp-content/uploads/2022/11/Entradas_menus_para_restaurante.jpg' },
   ];
 
   return (
