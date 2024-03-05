@@ -8,7 +8,7 @@ const PokemonCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://pokeapi.co/api/v2/pokemon?limit=80'
+        'https://pokeapi.co/api/v2/pokemon?limit=151'
       );
       const pokemonList = await Promise.all(
         result.data.results.map(async pokemon => {
@@ -72,7 +72,7 @@ const PokemonCard = () => {
         <div key={index} className="pokemon-card" style={{ backgroundColor: getTypeColor(pokemon.type) }}>
           <h2>{pokemon.name}</h2>
           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-          <p>{pokemon.description}</p> {/* Mostrar la descripción del Pokémon */}
+          <p>{pokemon.description}</p> {}
         </div>
       ))}
     </div>
