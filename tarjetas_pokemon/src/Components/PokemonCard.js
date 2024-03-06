@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './PokemonCardcss.css'; 
+import '../PokemonCardcss.css'; 
 
 const PokemonCard = () => {
   const [pokemonData, setPokemonData] = useState([]);
