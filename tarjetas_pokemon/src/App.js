@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import PokemonCard from './PokemonCard';
+import PokemonCard from './Components/PokemonCard';
 
 function App() {
   return (
