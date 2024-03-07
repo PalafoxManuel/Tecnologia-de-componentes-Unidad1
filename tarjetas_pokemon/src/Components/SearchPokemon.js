@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import Button from './ButtonSearch';
 
-const SearchPokemon = ({ setSearchTerm }) => {
+const SearchPokemon = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   const handleChange = event => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleSearch = () => {
+    onSearch(searchTerm);
   };
 
   return (
@@ -10,8 +17,10 @@ const SearchPokemon = ({ setSearchTerm }) => {
       <input
         type="text"
         placeholder="Buscar Pokémon por nombre"
+        value={searchTerm}
         onChange={handleChange}
       />
+      <Button onClick={handleSearch} text="Buscar" />
     </div>
   );
 };

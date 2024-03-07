@@ -6,24 +6,19 @@ import SearchPokemon from './SearchPokemon';
 const PokemonCard = () => {
   const [pokemonData, setPokemonData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchedPokemon, setSearchedPokemon] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
-        'https://pokeapi.co/api/v2/pokemon?limit=151'
-      );
-      const pokemonList = await Promise.all(
-        result.data.results.map(async pokemon => {
-          const response = await axios.get(pokemon.url);
-          const speciesResponse = await axios.get(response.data.species.url);
-          const description = speciesResponse.data.flavor_text_entries.find(entry => entry.language.name === 'en');
-          return { ...response.data, type: response.data.types[0].type.name, description: description.flavor_text };
-        })
-      );
-      setPokemonData(pokemonList);
+      if (searchTerm) {
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`);
+        const descriptionResponse = await axios.get(response.data.species.url);
+        const description = descriptionResponse.data.flavor_text_entries.find(entry => entry.language.name === 'en');
+        setSearchedPokemon([{ ...response.data, description: description.flavor_text }]);
+      }
     };
     fetchData();
-  }, []);
+  }, [searchTerm]);
 
   const getTypeColor = type => {
     switch (type) {
@@ -68,15 +63,19 @@ const PokemonCard = () => {
     }
   };
 
+  const handleSearch = searchTerm => {
+    setSearchTerm(searchTerm);
+  };
+
   return (
     <div>
-      <SearchPokemon setSearchTerm={setSearchTerm} /> {/* Incluye el componente de búsqueda */}
+      <SearchPokemon onSearch={handleSearch} /> {/* Incluye el componente de búsqueda */}
       <div className="pokemon-container">
-        {pokemonData.map((pokemon, index) => (
+        {searchedPokemon && searchedPokemon.map((pokemon, index) => (
           <div key={index} className="pokemon-card" style={{ backgroundColor: getTypeColor(pokemon.type) }}>
             <h2>{pokemon.name}</h2>
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-            <p>{pokemon.description}</p> {}
+            <p>{pokemon.description}</p>
           </div>
         ))}
       </div>
