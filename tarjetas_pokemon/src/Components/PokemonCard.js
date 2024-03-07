@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../PokemonCardcss.css'; 
+import SearchPokemon from './SearchPokemon';
 
 const PokemonCard = () => {
   const [pokemonData, setPokemonData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,14 +69,17 @@ const PokemonCard = () => {
   };
 
   return (
-    <div className="pokemon-container">
-      {pokemonData.map((pokemon, index) => (
-        <div key={index} className="pokemon-card" style={{ backgroundColor: getTypeColor(pokemon.type) }}>
-          <h2>{pokemon.name}</h2>
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-          <p>{pokemon.description}</p> {}
-        </div>
-      ))}
+    <div>
+      <SearchPokemon setSearchTerm={setSearchTerm} /> {/* Incluye el componente de búsqueda */}
+      <div className="pokemon-container">
+        {pokemonData.map((pokemon, index) => (
+          <div key={index} className="pokemon-card" style={{ backgroundColor: getTypeColor(pokemon.type) }}>
+            <h2>{pokemon.name}</h2>
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+            <p>{pokemon.description}</p> {}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
