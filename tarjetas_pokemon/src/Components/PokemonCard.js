@@ -4,7 +4,6 @@ import '../PokemonCardcss.css';
 import SearchPokemon from './SearchPokemon';
 
 const PokemonCard = () => {
-  const [pokemonData, setPokemonData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchedPokemon, setSearchedPokemon] = useState(null);
 
@@ -14,7 +13,8 @@ const PokemonCard = () => {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`);
         const descriptionResponse = await axios.get(response.data.species.url);
         const description = descriptionResponse.data.flavor_text_entries.find(entry => entry.language.name === 'en');
-        setSearchedPokemon([{ ...response.data, description: description.flavor_text }]);
+        // Almacenar los datos del Pokemon directamente en el estado searchedPokemon
+        setSearchedPokemon({ ...response.data, description: description.flavor_text });
       }
     };
     fetchData();
@@ -71,13 +71,14 @@ const PokemonCard = () => {
     <div>
       <SearchPokemon onSearch={handleSearch} /> {/* Incluye el componente de búsqueda */}
       <div className="pokemon-container">
-        {searchedPokemon && searchedPokemon.map((pokemon, index) => (
-          <div key={index} className="pokemon-card" style={{ backgroundColor: getTypeColor(pokemon.type) }}>
-            <h2>{pokemon.name}</h2>
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-            <p>{pokemon.description}</p>
+        {/* Verificar si searchedPokemon no es null y luego renderizar la tarjeta */}
+        {searchedPokemon && (
+          <div className="pokemon-card" style={{ backgroundColor: getTypeColor(searchedPokemon.types[0].type.name) }}>
+            <h2>{searchedPokemon.name}</h2>
+            <img src={searchedPokemon.sprites.front_default} alt={searchedPokemon.name} />
+            <p>{searchedPokemon.description}</p>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
