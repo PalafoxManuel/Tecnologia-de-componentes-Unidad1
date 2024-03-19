@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../PokemonCardcss.css'; 
+import '../cssComponents/PokemonCardcss.css'; 
 import SearchPokemon from './SearchPokemon';
+import Button from './ButtonSearch'; 
+import '../cssComponents/ButtonSearchcss.css'
 
 const PokemonCard = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchedPokemon, setSearchedPokemon] = useState(null);
+  const [showDetails, setShowDetails] = useState(false); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,6 +18,7 @@ const PokemonCard = () => {
         const description = descriptionResponse.data.flavor_text_entries.find(entry => entry.language.name === 'en');
         // Almacenar los datos del Pokemon directamente en el estado searchedPokemon
         setSearchedPokemon({ ...response.data, description: description.flavor_text });
+        setShowDetails(false); 
       }
     };
     fetchData();
@@ -67,16 +71,30 @@ const PokemonCard = () => {
     setSearchTerm(searchTerm);
   };
 
+  const handleToggleDetails = () => {
+    setShowDetails(!showDetails); 
+  };
+
   return (
     <div>
-      <SearchPokemon onSearch={handleSearch} /> {/* Incluye el componente de búsqueda */}
+      <SearchPokemon onSearch={handleSearch} /> {}
       <div className="pokemon-container">
-        {/* Verificar si searchedPokemon no es null y luego renderizar la tarjeta */}
+        {}
         {searchedPokemon && (
           <div className="pokemon-card" style={{ backgroundColor: getTypeColor(searchedPokemon.types[0].type.name) }}>
             <h2>{searchedPokemon.name}</h2>
             <img src={searchedPokemon.sprites.front_default} alt={searchedPokemon.name} />
             <p>{searchedPokemon.description}</p>
+            {}
+            <Button onClick={handleToggleDetails} text={showDetails ? 'Ocultar detalles' : 'Ver más'} className={"button-ver-mas"} />
+            {}
+            {showDetails && (
+              <div>
+                <p>Altura: {searchedPokemon.height}</p>
+                <p>Peso: {searchedPokemon.weight}</p>
+                {}
+              </div>
+            )}
           </div>
         )}
       </div>

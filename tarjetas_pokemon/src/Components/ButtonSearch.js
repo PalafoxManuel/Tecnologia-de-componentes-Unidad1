@@ -1,8 +1,9 @@
 import React from 'react';
+import '../cssComponents/ButtonSearchcss.css';
 
-const Button = ({ onClick, text }) => {
+const Button = ({ onClick, text, className }) => {
   return (
-    <button onClick={onClick}>{text}</button>
+    <button onClick={onClick} className={`button ${className}`}>{text}</button>
   );
 };
 
