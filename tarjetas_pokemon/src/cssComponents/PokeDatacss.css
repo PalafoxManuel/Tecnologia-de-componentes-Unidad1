@@ -1,0 +1,13 @@
+/* PokeDatacss.css */
+
+.poke-data-container {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: gray;
+  }
+  
+  .poke-data-item {
+    margin-bottom: 5px;
+  }
+  

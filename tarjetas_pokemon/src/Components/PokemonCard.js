@@ -3,7 +3,8 @@ import axios from 'axios';
 import '../cssComponents/PokemonCardcss.css'; 
 import SearchPokemon from './SearchPokemon';
 import Button from './ButtonSearch'; 
-import '../cssComponents/ButtonSearchcss.css'
+import '../cssComponents/ButtonSearchcss.css';
+import PokeData from './PokeData'; // Importa el componente PokeData
 
 const PokemonCard = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -79,23 +80,16 @@ const PokemonCard = () => {
     <div>
       <SearchPokemon onSearch={handleSearch} /> {}
       <div className="pokemon-container">
-        {}
         {searchedPokemon && (
           <div className="pokemon-card" style={{ backgroundColor: getTypeColor(searchedPokemon.types[0].type.name) }}>
             <h2>{searchedPokemon.name}</h2>
             <img src={searchedPokemon.sprites.front_default} alt={searchedPokemon.name} />
             <p>{searchedPokemon.description}</p>
-            {}
             <Button onClick={handleToggleDetails} text={showDetails ? 'Ocultar detalles' : 'Ver más'} className={"button-ver-mas"} />
-            {}
-            {showDetails && (
-              <div>
-                <p>Altura: {searchedPokemon.height}</p>
-                <p>Peso: {searchedPokemon.weight}</p>
-                {}
-              </div>
-            )}
           </div>
+        )}
+        {showDetails && searchedPokemon && (
+          <PokeData pokemon={searchedPokemon} />
         )}
       </div>
     </div>
