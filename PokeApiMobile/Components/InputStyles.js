@@ -1,16 +1,23 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    width: '80%',
+    flexDirection: 'row',
+    alignItems: 'center', 
+    justifyContent: 'center', 
+  },
+  input: {
+    flex: 1, 
+    maxWidth: width * 0.7, 
+    height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 10,
     marginBottom: 20,
-  },
-  input: {
-    height: 40,
+    marginRight: 10, 
   },
 });
 

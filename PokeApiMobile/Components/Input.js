@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextInput, View } from 'react-native';
-import styles from '../styles/SearchInputStyles';
+import styles from './InputStyles';
 
 const SearchInput = ({ placeholder }) => {
   return (
@@ -8,7 +8,7 @@ const SearchInput = ({ placeholder }) => {
       <TextInput
         style={styles.input}
         placeholder={placeholder}
-        onChangeText={(text) => console.log(text)} // Puedes manejar el cambio de texto aquí
+        onChangeText={(text) => console.log(text)}
       />
     </View>
   );
